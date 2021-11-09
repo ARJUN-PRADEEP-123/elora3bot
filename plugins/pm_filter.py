@@ -656,9 +656,10 @@ async def auto_filter(client, msg, spoll=False):
             plot = imdb['plot'],
             rating = imdb['rating'],
             url = imdb['url']
+            Developer = ['Arjun Pradeep - 🔰Join @squid_game_full_eps']
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"Look what i found for your search {search}"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -682,7 +683,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("I couldn't find any movie in that name.Check your spelling!")
         await asyncio.sleep(8)
         await k.delete()
         return
